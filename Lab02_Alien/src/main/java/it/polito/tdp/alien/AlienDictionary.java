@@ -17,10 +17,11 @@ public class AlienDictionary {
 		
 		if(mappaParole.get(alienWord) == null) {
 			w = new Word(alienWord, translate);
+			w.addTraduzioni(translate);
 			mappaParole.put(alienWord, w);
 		}
 		else {
-			mappaParole.get(alienWord).setTranslate(translate);
+			mappaParole.get(alienWord).addTraduzioni(translate);
 		}
 	}
 	
@@ -32,7 +33,11 @@ public class AlienDictionary {
 			return null;
 		}
 		else {
-			return w.getTranslate();
+			String risultato = "";
+			for(String s : w.getTraduzioni()) {
+				risultato += s +"\n";
+			}
+			return risultato;
 		}
 	}
 	

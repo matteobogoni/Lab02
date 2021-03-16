@@ -1,14 +1,19 @@
 package it.polito.tdp.alien;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Word {
 	
 	private String alienWord;
 	private String translate;
+	private List<String> traduzioni;
 	
 	public Word(String alienWord, String translate) {
 		super();
 		this.alienWord = alienWord;
 		this.translate = translate;
+		this.traduzioni = new LinkedList<String>();
 	}
 	
 	
@@ -29,6 +34,14 @@ public class Word {
 
 	public void setTranslate(String translate) {
 		this.translate = translate;
+	}
+	
+	public void addTraduzioni(String translate) {
+		traduzioni.add(translate);
+	}
+	
+	public List<String> getTraduzioni() {
+		return traduzioni;
 	}
 
 
